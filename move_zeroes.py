@@ -1,13 +1,13 @@
-def sort(lst):
-    swap = False
-    for i in range(len(lst) - 1):
-        if lst[i] == 0 and lst[i] < lst[i+1]:
-            swap = True
-            lst[i],lst[i+1] = lst[i+1],lst[i]
-    if swap:
-        sort(lst)
-    return lst
-
-lst = [1, 2, 0, 3, 4, 0, 5, 6, 0]
-x = sort(lst)
+def move_zeroes(arr):
+    i = 0
+    temp = []
+    while i < len(arr):
+        if arr[i] != 0:
+            temp.append(arr.pop(i))
+        else:
+            i += 1
+    return temp + arr
+            
+lst = [0,0,0,1,2,3,0,0,4,0,1]
+x = move_zeroes(lst)
 print(x)
