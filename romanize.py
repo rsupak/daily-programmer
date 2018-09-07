@@ -20,12 +20,11 @@ numerals = []
 def romanize(num):
     if num < 1:
         return "".join(numerals)
-    else:
-        for key in roman_numbers.keys():
-            if num >= roman_numbers[key]:
-                num -= roman_numbers[key]
-                numerals.append(key)
-                return romanize(num)
+    for key in roman_numbers.keys():
+        if num >= roman_numbers[key]:
+            num -= roman_numbers[key]
+            numerals.append(key)
+            return romanize(num)
 
 num = int(input("Please enter a number: "))
 print(romanize(num))
