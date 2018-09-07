@@ -1,18 +1,31 @@
-keys = { "M": 1000, "CM": 900, "D": 500, "CD": 400, "C": 100, "XC": 90, "L": 50, "XL": 40, "X": 10, "IX": 9, "V": 5, "IV": 4, "I": 1 }
+from collections import OrderedDict
 
-roman_number = []
+roman_numbers = OrderedDict()
+roman_numbers['M'] = 1000
+roman_numbers['CM'] = 900
+roman_numbers['D'] = 500
+roman_numbers['CD'] = 400
+roman_numbers['C'] = 100
+roman_numbers['XC'] = 90
+roman_numbers['L'] = 50
+roman_numbers['XL'] = 40
+roman_numbers['X'] = 10
+roman_numbers['IX'] = 9
+roman_numbers['V'] = 5
+roman_numbers['IV'] = 4
+roman_numbers['I'] = 1
+
+
+numerals = []
 def romanize(num):
     if num < 1:
-        return "".join(roman_number)
+        return "".join(numerals)
     else:
-        for key in keys.keys():
-            if num >= keys[key]:
-                num -= keys[key]
-                roman_number.append(key)
+        for key in roman_numbers.keys():
+            if num >= roman_numbers[key]:
+                num -= roman_numbers[key]
+                numerals.append(key)
                 return romanize(num)
 
-print(romanize(int(input("Please enter a number to turn into Roman Numerals >> "))))
-
-
-
-
+num = int(input("Please enter a number: "))
+print(romanize(num))
