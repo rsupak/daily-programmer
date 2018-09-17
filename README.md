@@ -1,5 +1,5 @@
 # daily-programmer
-solutions for daily challenges on Op Code daily-programmer Slack Channel
+Solutions for daily challenges on Op Code daily-programmer Slack Channel
 
 
 
