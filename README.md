@@ -1207,3 +1207,13 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 72107838435069186155435662884062257473692284509516
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690
+
+*=== Thursday Sep 20th 2018 - Daily Programmer ===*
+
+*[Number Count]*
+Given an array of sorted integers, count the provided number in the array.
+Solve it below O(n) time complexity.
+```input = [1, 2, 3, 3, 4] // count of 2, return 1
+input = [1, 2, 3, 3, 4] // count of 3, return 2
+input = [1, 2, 3, 3, 4] // count of 5, return 0```
+^ Google on-site question.  I had a mock with this yesterday.  I had a working solution in 45 minutes but it wouldn't be a pass.  I needed a hint on the most crucial step of the algorithm. 

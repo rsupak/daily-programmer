@@ -100,13 +100,5 @@ NUMBERS = '''
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690'''
 
-def largest_sum(string):
-
-  largest_sum = 0
-  for item in string.split("\n"):
-    total = sum(map(int, list(item)))
-    largest_sum = total if total >= largest_sum else largest_sum
-  return largest_sum
-  
-x = largest_sum(NUMBERS)
-print(x)
+l = len(NUMBERS)
+print(l)
