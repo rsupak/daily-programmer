@@ -1217,3 +1217,12 @@ Solve it below O(n) time complexity.
 input = [1, 2, 3, 3, 4] // count of 3, return 2
 input = [1, 2, 3, 3, 4] // count of 5, return 0```
 ^ Google on-site question.  I had a mock with this yesterday.  I had a working solution in 45 minutes but it wouldn't be a pass.  I needed a hint on the most crucial step of the algorithm. 
+
+
+
+*=== Friday Sep 21st 2018 - Daily Programmer ===*
+
+*[Detect and Remove a Loop in a Linked List]*
+Write a function `detectAndRemoveLoop()` that checks whether a given linked list contains loop and if loop is present then removes the loop and returns `true`. If the list doesn’t contain loop then returns `false`. (edited)
+
+Pasted image at 2018-09-21, 9:35 AM 
