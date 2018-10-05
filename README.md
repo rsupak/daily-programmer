@@ -1226,3 +1226,80 @@ input = [1, 2, 3, 3, 4] // count of 5, return 0```
 Write a function `detectAndRemoveLoop()` that checks whether a given linked list contains loop and if loop is present then removes the loop and returns `true`. If the list doesn’t contain loop then returns `false`. (edited)
 
 Pasted image at 2018-09-21, 9:35 AM 
+
+
+*=== Monday Sep 25th 2018 - Daily Programmer ===*
+
+*[Egg Drop]*
+
+Suppose that we wish to know which stories in a 36-story building are safe to drop eggs from, and which will cause the eggs to break on landing. We make a few assumptions:
+• An egg that survives a fall can be used again.
+• A broken egg must be discarded.
+• The effect of a fall is the same for all eggs.
+• If an egg breaks when dropped, then it would break if dropped from a higher window.
+• If an egg survives a fall, then it would survive a shorter fall.
+• It is not ruled out that the first-floor windows break eggs, nor is it ruled out that eggs can survive the 36th-floor windows.
+
+If only one egg is available and we wish to be sure of obtaining the right result, the experiment can be carried out in only one way. Drop the egg from the first-floor window; if it survives, drop it from the second-floor window. Continue upward until it breaks. In the worst case, this method may require 36 droppings.
+
+Suppose 2 eggs are available. What is the lowest number of egg-droppings that is guaranteed to work in all cases?
+
+```const countOfEggs = 2
+const countOfFloors = 10
+findMinDrops(countOfEggs, countOfFloors) === 4
+
+findMinDrops(2, 100) === 14```
+(If you get stuck, don't be afraid to search the web around.  There are many excellent write-ups to this famous problem.  Reading up on dynamic programming will help).
+
+Remember to code it.  An important thing to note is that it's important to actually code the solution in full after solving something in your head.  The implementation step is a crucial step where you learn just as much. (edited)
+
+
+*=== Wednesday Sep 26th 2018 - Daily Programmer ===*
+
+*[Condencing Sentences]*
+
+Compression makes use of the fact that repeated structures are redundant, and it's more efficient to represent the pattern and the count or a reference to it. Siimilarly, we can condense a sentence by using the redundancy of overlapping letters from the end of one word and the start of the next. In this manner we can reduce the size of the sentence, even if we start to lose meaning.
+
+For instance, the phrase "live verses" can be condensed to "liverses".
+
+Writing a functiont that condenses an input string.
+
+```Input: I heard the pastor sing live verses easily.
+Output: I heard the pastor sing liverses easily. 
+
+Input: Deep episodes of Deep Space Nine came on the television only after the news. 
+Output: Deepisodes of Deep Space Nine came on the televisionly after the news.
+
+Input:  Digital alarm clocks scare area children.
+Output:  Digitalarm clockscarea children.```
+
+
+*=== Thursday Sep 27th 2018 - Daily Programmer ===*
+
+*[Fascinating Number]*
+Given a number N, the task is to check whether it is fascinating or not.
+
+Fascinating Number: When a number( 3 digits or more ) is multiplied by 2 and 3, and when both these products are concatenated with the original number, then it results in all digits from 1 to 9 present exactly once. There could be any number of zeros and are ignored.
+
+```Input: 192
+Output: Yes
+After multiplication with 2 and 3, and concatenating with original number, resultant number is 192384576 which contains all digits from 1 to 9.```
+```Input: 853
+Output: No
+After multiplication with 2 and 3, and concatenating with original number, the resultant number is 85317062559. In this, number 4 is missing and the number 5 has appeared multiple times.```
+
+
+*=== Friday Sep 28th 2018 - Daily Programmer ===*
+
+*[Rotated Sorted Array Search]*
+
+Given an array that is sorted an rotated, find out if a target value exists in the array.
+
+Examples:
+```[35, 46, 79, 102, 1, 14, 29, 31], 46 --> true
+[35, 46, 79, 102, 1, 14, 29, 31], 47 --> false
+[7, 8, 9, 10, 1, 2, 3, 4, 5, 6], 9 --> true```
+
+Constraints:
+```Time: O(logN)
+Space: O(N)```
