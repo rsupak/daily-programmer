@@ -21,8 +21,8 @@ def productify(input)
   input.each_index do |i|
     input[i].delete_at(i)
   end
-  
+
 end
 
-p productify([2,3,6])
+p productify([2, 3, 6])
 
