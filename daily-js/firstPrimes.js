@@ -16,7 +16,6 @@ const firstNPrimes = n => {
   let primes = [];
 
   for (let i = 2; primes.length < n; i++) {
-    console.log(i);
     if (isPrime(i)) {
       primes.push(i);
     }
@@ -24,4 +23,4 @@ const firstNPrimes = n => {
   return primes;
 };
 
-console.log(firstNPrimes(15));
+console.log(firstNPrimes(4));
