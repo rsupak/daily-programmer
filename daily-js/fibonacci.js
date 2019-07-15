@@ -20,20 +20,20 @@ const fibSequence = (max) => {
   }
 }
 
-console.log(fibSequence(10))
+// console.log(fibSequence(10))
 
 
 //
-// const test = (max) => {
-//   function* numbers(max) {
-//     let n = 0;
-//     while (n < max) {
-//       yield n++;
-//     }
-//   }
-//   for (let n of numbers(max)) {
-//     console.log(n);
-//   }
-// }
-//
-// console.log(test(10))
+const test = (max) => {
+  function* numbers(max) {
+    let n = 0;
+    while (n < max) {
+      yield n++;
+    }
+  }
+  for (let n of numbers(max)) {
+    console.log(n);
+  }
+}
+
+console.log(test(10))
