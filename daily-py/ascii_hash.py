@@ -1,5 +1,5 @@
 from functools import reduce
-TEST = "test"
+TEST = "Hello"
 
 string_list = list(TEST)
 
