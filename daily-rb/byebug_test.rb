@@ -1,11 +1,13 @@
 require "byebug"
 
 def fuzz_buzz(num)
-  debugger
+  # debugger
   numbers = []
   (1..num).each do |i|
-    if i % 3 != 0 || i % 5 != 0
+    if i % 3 == 0 || i % 5 == 0
       numbers << 1
+    else
+      numbers << 0
     end
   end
   numbers

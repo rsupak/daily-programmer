@@ -12,7 +12,6 @@ require 'byebug'
 def prime?(num)
   return false if num < 2
 
-  debugger
   (2...num).each do |fact|
     p fact
     return false if (num % fact).zero?

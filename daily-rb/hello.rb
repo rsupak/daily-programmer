@@ -2,9 +2,9 @@ def hello
   puts 'hello'
 end
 
-def hello1
+def hello3
   3.times { puts 'hello' }
 end
 
 hello
-hello1
+hello3

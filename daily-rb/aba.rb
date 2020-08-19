@@ -1,36 +1,17 @@
-def aba_translate(string)
-  fixed_string = ''
-  unreplaced = string
-  factor = [unreplaced, fixed_string]
-  replaced = false
-  until replaced
-    replaced = true
-    factor = replace(factor)
-    replaced = false unless factor[0].nil?
-  end
-  factor[1]
-end
+# frozen_string_literal: true
 
-def replace(arr)
+def aba_translate(string)
   vowels = 'aeiou'
-  unreplaced = arr[0]
-  fixed_string = arr[1]
-  found_vowel = false
-  until found_vowel
-    unreplaced.each_char.with_index do |char, idx|
-      if vowels.include?(char)
-        found_vowel = true
-        fixed_string = unreplaced[0..idx] + 'b' + char
-        unreplaced = unreplaced[idx + 1..-1]
-      elsif idx == unreplaced.length - 1 && found_vowel == false
-        fixed_string += unreplaced
-        unreplaced = nil
-        return arr = [unreplaced, fixed_string]
-      end
-    end
+  result = ''
+  string.each_char do |char|
+    result += vowels.include?(char) ? char + 'b' + char : char
   end
-  arr = [unreplaced, fixed_string]
+  result
 end
 
 p aba_translate('trial')
-
+# p aba_translate('cats')
+# p aba_translate('dog')
+# p aba_translate('kite')
+# p aba_translate('afrika')
+# p aba_translate('fly')
