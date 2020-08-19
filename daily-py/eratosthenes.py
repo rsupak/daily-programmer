@@ -19,4 +19,4 @@ def eratosthenes(num):
     
     return num_arr
     
-print(eratosthenes(10))
+print(eratosthenes(500))

@@ -2,7 +2,7 @@ from math import sqrt
 
 def is_prime(num):
     if num < 2:
-        return -1
+        return False
     else:
         if num <= 3:
             return True

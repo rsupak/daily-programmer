@@ -1,0 +1,111 @@
+<div ng-if="c.data.catalogSelectorArr.length > 2" ng-class="{'hidden-xs' : hideCategoryWidgetInXS}"
+  class="panel panel-{{::options.color}} category-widget no-border">
+  <div class="panel-primary panel-heading">
+    <h2 class="h4 panel-title">
+      {{::data.messages.catalogTitle}}
+    </h2>
+  </div>
+  <ul class="list-group category-list" role="list" aria-label="{{::data.messages.catalogTitle}}">
+    <li role="listitem" class="list-group-item text-overflow-ellipsis" ng-include="'catalog-template.html'" />
+  </ul>
+</div>
+<script type="text/ng-template" id="catalog-template.html">
+  <select class="sc-basic-select" aria-label="{{::data.messages.catalogTitle}}" ng-change="changeCatalog(selectedCatalog)" sn-focus="true" ng-model="selectedCatalog" ng-options="catalog.displayValue for catalog in c.data.catalogSelectorArr track by catalog.value"/>
+</script>
+<div ng-class="{'hidden-xs' : hideCategoryWidgetInXS}"
+  class="panel panel-{{::options.color}} category-widget no-border">
+  <div class="panel-heading">
+    <h2 class="h4 panel-title">
+      <span class="pull-right visible-xs">
+        <i class="fa fa-times-circle" ng-click="hideBrowseCategory()" aria-label="${Show Items}" tabindex="0" />
+      </span>
+      <span ng-if="::options.glyph">
+        <fa name="{{::options.glyph}}" />
+      </span>{{::options.title}}</h2>    
+  </div>
+  <ul class="list-group category-list" role="list" aria-label="${Categories}">
+    <li role="listitem" 27 class="list-group-item text-overflow-ellipsis" 28 ng-if="category.totalCount > 0"
+      ng-include="'category-template.html'" 29
+      ng-repeat="category in data.categoriesList | limitTo: data.limit track by category.sys_id">
+      
+    </li>
+    
+  </ul>
+  
+  <div class="panel-footer text-center" ng-if="data.showMore">
+    
+    <a href="javascript:void(0)" role="button" class="text-center" ng-click="loadMore()">{{::data.showMoreMsg}}</a>
+    
+    <div class="text-muted text-center">
+      
+      {{data.more_msg}}
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+<script type="text/ng-template" id="category-template.html">
+  
+  <div ng-click="categorySelected(category)"
+
+  ng-keydown="handleKeyPressOnCategory($event, category)"
+
+    sn-focus="category.sys_id == data.categoryId"
+
+    ng-enabled="category.totalCount > 0"
+
+    ng-class="{true: 'text-active', false: ''}[category.sys_id == data.categoryId]"
+
+          tabindex="0" class="group-item group-item-primary" data-ng-attr-style="padding-left:{{getCategoryPadding(category.level + 1)}}">
+
+      <i ng-if="::category.subcategories.length > 0 && category.totalCount > category.count" 
+
+          class="l-h-1_6x pull-left fa collapse-icon" 
+
+          ng-class="{true: 'fa-minus-square-o', false: 'fa-plus-square-o'}[category.showChildren]" 
+
+          aria-label="{{category.showChildren? '${collapse category} ' + category.title : '${expand category} ' + category.title}}"
+
+          ng-click="displayChildren($event, category)"/></i>
+
+      <span class="badge pull-right pointer" ng-if="options.omit_badges != 'true' && data.largeDataSet != 'true'">{{::category.totalCount}}</span>
+
+      <span class="block text-overflow-ellipsis category" 
+
+          id="{{::category.sys_id}}"
+
+          uib-tooltip="{{::category.title}} {{::category.catalog_tooltip}}"
+
+          tooltip-placement="top"
+
+          tooltip-enable="!isTouchDevice()"
+
+          tooltip-append-to-body="true">
+
+          {{::category.title}}
+
+          <span class="sr-only">${items}</span>
+
+      </span>
+
+    </div>
+
+    <ul class="list-group sub-category-list list-bg-primary" role="list" aria-label="{{category.title}} ${subcategories}" ng-if="category.showChildren && category.subcategories.length > 0" ng-class="{true: 'no-indent', false: ''}[category.level > 2]">
+
+      <li role="listitem" 
+
+          class="list-group-item text-overflow-ellipsis" 
+
+          ng-include="'category-template.html'" 
+
+          ng-repeat="category in category.subcategories track by category.sys_id" 
+
+          ng-if="category.totalCount > 0">
+
+      </li>
+
+    </ul>
+
+</script>
