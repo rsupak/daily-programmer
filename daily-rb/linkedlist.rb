@@ -27,19 +27,18 @@ class LinkedList
 
   def remove(value_to_remove)
     # debugger
-    previous_node = nil
+    previous_node = @head
     current_node = @head
     until current_node.nil?
       if current_node.value == value_to_remove
         if current_node == @head
-          @head = current_node.next
-        elsif previous_node.nil?
+          @head = @head.next
+          current_node = @head
         else
-          previous_node = current_node.next
+          previous_node.next = current_node.next
         end
-        current_node = current_node.next
       end
-      previous_node = current_node
+      previous_node = previous_node.next
       current_node = current_node.next
     end
   end
@@ -56,10 +55,10 @@ class LinkedList
 end
 
 list = LinkedList.new
-arr = [6, 2, 3, 4, 5, 6, 4, 3, 6, 6, 2]
+arr = [4,4,6,3,4,2,7,4,3,5,6,6,3,4,4,3,2]
 arr.each do |num|
   list << Node.new(num)
 end
 puts list
-list.remove(6)
+list.remove(4)
 puts list
