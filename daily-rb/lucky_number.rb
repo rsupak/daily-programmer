@@ -1,0 +1,54 @@
+# [Find Lucky Integer in an Array]
+# Given an array of integers arr, a lucky integer is an integer which has a frequency in the array equal to its value.
+# Return a lucky integer in the array. If there are multiple lucky integers return the largest of them. If there is no lucky integer return -1.
+
+# Example 1:
+# Input: arr = [2,2,3,4]
+# Output: 2
+# Explanation: The only lucky number in the array is 2 because frequency[2] == 2.
+
+# Example 2:
+# Input: arr = [1,2,2,3,3,3]
+# Output: 3
+# Explanation: 1, 2 and 3 are all lucky numbers, return the largest of them.
+
+# Example 3:
+# Input: arr = [2,2,2,3,3]
+# Output: -1
+# Explanation: There are no lucky numbers in the array.
+
+# Example 4:
+# Input: arr = [5]
+# Output: -1
+
+# Example 5:
+# Input: arr = [7,7,7,7,7,7,7]
+# Output: 7
+ 
+# Constraints:
+# 1 <= arr.length <= 500
+# 1 <= arr[i] <= 500
+
+def find_lucky_number(arr)
+  num_hash = {}
+  lucky_nums = []
+  arr.each.with_index do |num, i|
+    num_hash[num] = arr.count(num)
+    lucky_nums << num if num_hash[num] == num
+  end
+  lucky_nums.empty? ? -1 : lucky_nums.max
+end
+
+# p find_lucky_number([2,2,3,4])
+# p find_lucky_number([1,2,2,3,3,3])
+# p find_lucky_number([2,2,2,3,3])
+# p find_lucky_number([5])
+# p find_lucky_number([7,7,7,7,7,7,7])
+
+def find_lucky(arr)
+  p arr.reduce(Hash.new(0)) { |freq, int| freq[int] += 1; freq }
+     .select(&:==)
+     .reduce(-1) { |a, (c, _)| [a, c].max }
+end
+
+p find_lucky([2,2,3,4])
