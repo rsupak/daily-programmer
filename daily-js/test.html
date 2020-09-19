@@ -3,47 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script>
-        // Takes in a string and trans-literates it into Pig Latin.
-
-'use strict';
-
-const vowels = ['a', 'e', 'i', 'o', 'u'];
-const isFirstLetterAVowel = (str) => vowels.includes( str[0] );
-
-function translate(str) {
-  let arr = str.split(' ');
-  let newArr = [];
-  for (let word of arr) {
-    if (isFirstLetterAVowel(word)) {
-      newArr.push(word + "way");
-    } else if (!isFirstLetterAVowel(word)){
-      // check for vowels within the words
-      let letterPosition = 0;
-      while (vowels.indexOf(word[letterPosition]) < 0 && letterPosition < word.length) {
-        letterPosition++
-      }
-      // if no vowels return string + 'ay'
-      if (letterPosition === word.length) {
-        newArr.push(word + "ay")
-      }
-      // if word contains vowels, break the string before first vowel and pig-latin it.
-      else {
-        let stringStart = word.slice(0,letterPosition);
-        let stringMiddle = word.slice(letterPosition, word.length);
-        newArr.push(stringMiddle + stringStart + "ay");
-      }
-    }
-  }
-  return newArr.join(' ');
-}
-
-alert(translate("Life is a highway"))
-    </script>
+    <title>Learning Geolocation Details from W3Schools</title>
 </head>
 <body>
-    
+    <div id="map">
+    </div>
+    <script src="newLocation.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhWrPc09gqOZa3c7B1-ICTj7ku6Jd0zlo&callback=initMap">
+    </script>
 </body>
 </html>

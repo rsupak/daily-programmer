@@ -3,22 +3,21 @@ def reverse(lst):
 
 
 def rotate(lst, shift=1):
-    temp = lst[:]
-    for i in range(len(lst)):
-        new_pos = i - shift
-        print(new_pos)
-        if new_pos < 0:
-            temp[len(lst) - shift] = lst[i]
-        elif new_pos > len(lst)-1:
-            temp[shift - len(lst)] = lst[i]
-        else:
-            temp[new_pos] = lst[i]
-    return temp
+    if shift >= 0:
+        while shift > 0:
+            temp = lst.pop(0)
+            lst += [temp]
+            shift -= 1
+    else:
+        while shift < 0:
+            lst = [lst.pop()] + lst
+            shift += 1
+    return lst
         
 
 
 x = reverse(["a","b","c"])
-# print(x)
+print(x)
 
 y = rotate(["a","b","c"])
 print(y)
