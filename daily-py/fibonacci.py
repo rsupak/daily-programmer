@@ -9,4 +9,4 @@ def get_fibonacci(high, fib_list = [0,1], even_sum = 0):
         fib_list[0],fib_list[1] = fib_list[1],new_num
         return get_fibonacci(high, fib_list, even_sum)
 
-print(get_fibonacci(4000000))
+print(get_fibonacci(8))

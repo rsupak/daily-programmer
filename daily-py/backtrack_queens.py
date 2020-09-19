@@ -38,9 +38,6 @@ def backtrack(queens, x_dict, y_dict):
         grid_dict_x[0] = 0
         for key, value in x_dict.items():
             for y_key, y_val in y_dict.item():
-                    
-
                 
-
-
+                    
 print(backtrack(0, grid_dict_x, grid_dict_y))

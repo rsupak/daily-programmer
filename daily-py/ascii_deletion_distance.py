@@ -1,15 +1,14 @@
-# def ascii_deletion_distance(str1, str2):
-#     str1 = set(str1)
-#     str2 = set(str2)
-#     if len(str1) > len(str2):
-#         temp_set = str1 ^ str2
-#     else:
-#         temp_set = str2 ^ str1
-#     print(temp_set)
-#     temp_sum = 0
-#     for item in list(temp_set):
-#         temp_sum += ord(item)
-#     return temp_sum
+def ascii_deletion_distance(str1, str2):
+    str1 = set(str1)
+    str2 = set(str2)
+    if len(str1) > len(str2):
+        temp_set = str1 ^ str2
+    else:
+        temp_set = str2 ^ str1
+    temp_sum = 0
+    for item in list(temp_set):
+        temp_sum += ord(item)
+    return temp_sum
 
 def fun(str1, str2):
     str1 = list(str1)
@@ -41,5 +40,5 @@ str1 = 'bat'
 str2 = 'goat'
 
 
-# print(ascii_deletion_distance(str1, str2))
-print(fun(str1, str2))
+print(ascii_deletion_distance(str1, str2))
+# print(fun(str1, str2))
