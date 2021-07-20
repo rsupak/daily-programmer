@@ -1,0 +1,21 @@
+html {
+  width: 800px; height: 600px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#korbytFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#korbyt-sonar-content-7 {
+  width: inherit;
+  height: inherit;
+}
+
+

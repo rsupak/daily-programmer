@@ -1,0 +1,14 @@
+{
+  "name": "practice-app",
+  "version": "1.0.0",
+  "description": "Just practicing...",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Rich Supak",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^12.0.1"
+  }
+}
